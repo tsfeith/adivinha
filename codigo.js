@@ -12,6 +12,7 @@ function Aleatorio() {
 function Inic() {
 	limite = prompt("Qual é o número que queres que seja o máximo (inclusive)?","");
 	limite = Number(limite);
+	window.limite = limite;
 	RNumero = Aleatorio();
 	NTentativas = 0;
 	document.FJogo.Saida.value='Estou a pensar num numero entre 0 e ' + (limite) +'. Tenta adivinhar qual é?';
