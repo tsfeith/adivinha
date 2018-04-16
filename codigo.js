@@ -21,7 +21,7 @@ function Inic() {
 }
 
 function Jogo(Numero) {
-    if (0 > Numero > limite) {
+    if (Numero > limite) {
         document.FJogo.Saida.value='O seu número tem de ser entre 0 e ' + limite + '. Por favor insira um valor aceitável.';
         document.FJogo.AltoBaixo.value='inválido';
     } else {
