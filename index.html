@@ -1,0 +1,48 @@
+<html>
+	<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="codigo.js"></script>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+
+</head>
+
+<body>
+	<center>
+		<FORM NAME="FJogo">
+			<h1>O Jogo do Adivinha</h1>
+			<h2>Área de mensagens:</h2>
+			<INPUT TYPE="txt" NAME="Saida" VALUE="" Size="80"><br><br>
+			O número é <INPUT TYPE="txt" NAME="AltoBaixo" VALUE='' Size="10"><br><br>
+			Nº de tentativas: <INPUT TYPE="txt" NAME="Tentativas"  VALUE="0" SIZE="2"> <br><br>
+			<hr> <br>
+			<INPUT TYPE="button" NAME="inic" VALUE="1.    Iniciar / Re-iniciar    " OnClick="Inic()"><br><br>
+		
+			2. Escreve o número do teu palpite:
+			<INPUT TYPE="txt" NAME="Entrada" VALUE='' Size="10"><br><br>
+			Podes usar este teclado para escrever o número:<br><br>
+			<INPUT TYPE="button" NAME="um"  VALUE="  1  " OnClick="FJogo.Entrada.value += 1">
+			<INPUT TYPE="button" NAME="um"  VALUE="  2  " OnClick="FJogo.Entrada.value += 2">
+			<INPUT TYPE="button" NAME="um"  VALUE="  3  " OnClick="FJogo.Entrada.value += 3"><br>
+			<INPUT TYPE="button" NAME="um"  VALUE="  4  " OnClick="FJogo.Entrada.value += 4">
+			<INPUT TYPE="button" NAME="um"  VALUE="  5  " OnClick="FJogo.Entrada.value += 5">
+			<INPUT TYPE="button" NAME="um"  VALUE="  6  " OnClick="FJogo.Entrada.value += 6"><br>
+			<INPUT TYPE="button" NAME="um"  VALUE="  7  " OnClick="FJogo.Entrada.value += 7">
+			<INPUT TYPE="button" NAME="um"  VALUE="  8  " OnClick="FJogo.Entrada.value += 8">
+			<INPUT TYPE="button" NAME="um"  VALUE="  9  " OnClick="FJogo.Entrada.value += 9"><br>
+			<INPUT TYPE="button" NAME="um"  VALUE="  0  " OnClick="FJogo.Entrada.value += 0"><br><br>
+		
+		<INPUT TYPE="button" NAME="Faz" VALUE="3.    Verificar!    " OnClick="Jogo(FJogo.Entrada.value); FJogo.Entrada.value=''"><br><br>
+		</FORM>
+		
+		<hr><h3>Instruções:</h3>
+		1. Clica em Iniciar/Re-iniciar<br>
+		2. Escolhe o número que queres que seja o máximo<br>
+		3. Clica nos botões com os números ou escreve diretamente<br>
+		4. Clica em Verificar!<br>
+		5. Repete os passos 3 e 4 até acertares no número<br><hr><br>
+		
+	</center>
+
+</body>
+
+</html>
