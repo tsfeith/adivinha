@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<style>
+		hr { 
+		display: block;
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+		margin-left: auto;
+		margin-right: auto;
+		border-style: inset;
+		border-width: 1px;
+		border-color: red;
+	} 
+	</style>
+	
+	<script>
+
+	var NAleatorio;
+	var NTentativas;
+	limite = 50;
+
+	function Aleatorio()
+	{
+		hoje = new Date();
+		num1 = hoje.getTime();
+		num = Math.round(Math.abs(Math.sin(num1) * 1000000)) % limite;
+		//window.alert(num1);
+		//window.alert(num);
+		return num;
+	}
+
+	function Iniciar()
+	{
+		NAleatorio = Aleatorio();
+		NTentativas = 0;
+		document.Fjogo.Saida.value='Estou a pensar num numero entre 0 e ' + (limite-1) +'. Tenta adivinhar qual é?';
+		document.Fjogo.Tentativas.value=NTentativas;
+		document.Fjogo.AltoBaixo.value='';
+		document.Fjogo.Entrada.value='';
+	}
+
+	function Jogada(Numero)
+	{
+		if(Numero==NAleatorio)
+		{
+			NTentativas++;
+			document.Fjogo.Saida.value='Acertaste em ' + NTentativas + ' tentativas! Era o numero ' + NAleatorio + '! Clica em Re-iniciar.';
+			document.Fjogo.AltoBaixo.value='Está certo!';
+		}
+		else 
+		{
+			NTentativas++;
+			document.Fjogo.Saida.value='Não, ' + Numero + ' não é o numero em que estou a pensar!';
+			document.Fjogo.AltoBaixo.value=(NAleatorio > Numero) ? ' é mais alto!' : 'é mais baixo!';
+			document.Fjogo.Tentativas.value=NTentativas;
+		}
+	}
+
+	</script>
+
+</head>
+
+<body>
+	<center>
+		<FORM NAME="Fjogo">
+			<h1>O Jogo do Adivinha</h1>
+			<h2>Área de mensagens:</h2>
+			<INPUT TYPE="txt" NAME="Saida" VALUE="" Size="60"><br><br>
+			O número <INPUT TYPE="txt" NAME="AltoBaixo" VALUE="" Size="10"><br><br>
+			Nº de tentativas: <INPUT TYPE="txt" NAME="Tentativas"  VALUE="0" SIZE="2"> <br><br>
+			<hr> <br>
+			<INPUT TYPE="button" NAME="inicial" VALUE="1.    Iniciar / Re-iniciar    " OnClick="Iniciar()"><br><br>
+		
+			2. Escreve o número do teu palpite:
+			<INPUT TYPE="txt" NAME="Entrada" VALUE="" Size="10"><br><br>
+			Podes usar este teclado para escrever o número:<br><br>
+			<INPUT TYPE="button" NAME="one"  VALUE="  1  " OnClick="Fjogo.Entrada.value += 1">
+			<INPUT TYPE="button" NAME="one"  VALUE="  2  " OnClick="Fjogo.Entrada.value += 2">
+			<INPUT TYPE="button" NAME="one"  VALUE="  3  " OnClick="Fjogo.Entrada.value += 3"><br>
+			<INPUT TYPE="button" NAME="one"  VALUE="  4  " OnClick="Fjogo.Entrada.value += 4">
+			<INPUT TYPE="button" NAME="one"  VALUE="  5  " OnClick="Fjogo.Entrada.value += 5">
+			<INPUT TYPE="button" NAME="one"  VALUE="  6  " OnClick="Fjogo.Entrada.value += 6"><br>
+			<INPUT TYPE="button" NAME="one"  VALUE="  7  " OnClick="Fjogo.Entrada.value += 7">
+			<INPUT TYPE="button" NAME="one"  VALUE="  8  " OnClick="Fjogo.Entrada.value += 8">
+			<INPUT TYPE="button" NAME="one"  VALUE="  9  " OnClick="Fjogo.Entrada.value += 9"><br>
+			<INPUT TYPE="button" NAME="one"  VALUE="  0  " OnClick="Fjogo.Entrada.value += 0"><br><br>
+		
+		<INPUT TYPE="button" NAME="Executa" VALUE="3.   Verificar!   " OnClick="Jogada(Fjogo.Entrada.value); Fjogo.Entrada.value=''"><br><br>
+		</FORM>
+		
+		<hr><h3>Instruções:</h3>
+		1. Clica em Iniciar/Re-iniciar<br>
+		2. Clica nos botões com os números ou escreve diretamente<br>
+		3. Clica em Verificar!<br>
+		4. Repete os passos 2 e 3 até acertares no número<br><hr><br>
+		
+	</center>
+
+</body>
+
+</html>
