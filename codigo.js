@@ -10,7 +10,7 @@ function Aleatorio() {
   	//e assim o número aleatório será diferente e difícil de prever
 	hoje = new Date();
 	num = hoje.getTime();
-	num = Math.round(Math.abs(Math.sin(num) * 1000000)) % limite;
+	num = Math.ceil(Math.abs(Math.sin(num) * 1000000)) % limite;
 	return num;
 	
 }
@@ -29,7 +29,7 @@ function Inic() {
 	window.limite = limte;
 	RNumero = Aleatorio();
 	NTentativas = 0;
-	document.FJogo.Saida.value='Estou a pensar num numero entre 0 e ' + (limite) +'. Tenta adivinhar qual é?';
+	document.FJogo.Saida.value='Estou a pensar num numero entre 1 e ' + (limite) +'. Tenta adivinhar qual é?';
 	document.FJogo.Tentativas.value=NTentativas;
 	document.FJogo.AltoBaixo.value='';
 	document.FJogo.Entrada.value='';
@@ -40,7 +40,7 @@ function Jogo(Numero) {
     	//o bloco if abaixo garante que o utilizador dá um número no intervalo de jogo
     	//obrigando-o a repetir caso dê um valor maior que 'limite'
 	if (0 > Numero > limite) {
-        	document.FJogo.Saida.value='O seu número tem de ser entre 0 e ' + limite + '. Por favor insira um valor aceitável.';
+        	document.FJogo.Saida.value='O seu número tem de ser entre 1 e ' + limite + '. Por favor insira um valor aceitável.';
         	document.FJogo.AltoBaixo.value='inválido';
     
     	} else {
