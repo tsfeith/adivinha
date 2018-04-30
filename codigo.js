@@ -39,7 +39,7 @@ function Jogo(Numero) {
     
     	//o bloco if abaixo garante que o utilizador dá um número no intervalo de jogo
     	//obrigando-o a repetir caso dê um valor maior que 'limite'
-	if (0 > Numero > limite) {
+	if (Numero > limite) {
         	document.FJogo.Saida.value='O seu número tem de ser entre 1 e ' + limite + '. Por favor insira um valor aceitável.';
         	document.FJogo.AltoBaixo.value='inválido';
     
