@@ -26,7 +26,7 @@ function Inic() {
 	
 	//esta linha extrai o valor do limite para que possa ser usado por qualquer
 	//função da janela, alterando assim o seu scope
-	window.limite = limte;
+	window.limite = limite;
 	RNumero = Aleatorio();
 	NTentativas = 0;
 	document.FJogo.Saida.value='Estou a pensar num numero entre 1 e ' + (limite) +'. Tenta adivinhar qual é?';
